@@ -1,0 +1,259 @@
+﻿@font-face {
+  font-family: "futura";
+  font-style: normal;
+  src: url("../fonts/futura-book.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "futura-bold";
+  font-style: normal;
+  src: url("../fonts/futura-bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "futura-heavy";
+  font-style: normal;
+  src: url("../fonts/futura-heavy.ttf") format("truetype");
+}
+@font-face {
+  font-family: "futura-light";
+  font-style: normal;
+  src: url("../fonts/futura-light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "futura-medium";
+  font-style: normal;
+  src: url("../fonts/futura-medium.ttf") format("truetype");
+}
+
+
+:root {
+  --body-font: "futura";
+  --azul-caixa : #005ca9;
+  --info-caixa: #008254;
+  --turquesa-caixa : #54bbab;
+  --roxo-caixa: #827098;
+  --vermelho-caixa: #f51c1f;
+  --verde-caixa: #b2cb0b;
+  --tangerina-caixa: #faaf00;  
+  --laranja-caixa: #ff8000;
+  --goiaba-caixa: #ef755d;
+  --ceu-caixa: #00b4e6;
+  --cinza-caixa: #c9c9cf;
+  --cinza-claro-caixa: #e9e9eb;
+  --cinza-escuro-caixa: #666666;
+  --sucesso-caixa: #008254;
+  --atencao-caixa: #ffd000;
+  --perigo-caixa: #900000;
+  --grafite-caixa: #3a4859;
+  --gelo-caixa: #d0e0e3;
+  --fundo-pagina: #fafafa;
+}
+
+.futura {
+  font-family: "futura" !important;
+}
+.futura-bold {
+  font-family: "futura-bold" !important;
+}
+.futura-heavy {
+  font-family: "futura-heavy" !important;
+}
+.futura-light {
+  font-family: "futura-light" !important;
+}
+.futura-medium {
+  font-family: "futura-medium" !important;
+}
+
+.azul-caixa {
+  color: var(--azul-caixa) !important;
+}
+
+.turquesa-caixa {
+  color: var(--turquesa-caixa) !important;
+}
+
+.roxo-caixa {
+  color: var(--roxo-caixa) !important;
+}
+
+.vermelho-caixa {
+  color: var(--vermelho-caixa) !important;
+}
+
+.verde-caixa {
+  color: var(--verde-caixa) !important;
+}
+
+.tangerina-caixa {
+  color: var(--tangerina-caixa) !important;
+}
+
+.laranja-caixa {
+  color:var(--laranja-caixa) !important;
+}
+
+.goiaba-caixa {
+  color: var(--goiaba-caixa) !important;
+}
+
+.ceu-caixa {
+  color: var(--ceu-caixa) !important;
+}
+
+.cinza-caixa {
+  color: var(--cinza-caixa) !important;
+}
+
+.cinza-claro-caixa {
+  color: var(--cinza-claro-caixa) !important;
+}
+
+.cinza-escuro-caixa {
+  color: var(--cinza-escuro-caixa) !important;
+}
+.gelo-caixa { 
+  color: var(--gelo-caixa) !important;
+ }
+.sucesso-caixa {
+  color: var(--sucesso-caixa) !important 
+}
+.atencao-caixa  {
+  color: var(--atencao-caixa) !important;
+}
+.perigo-caixa { 
+  color: var(--perigo-caixa) !important;
+}
+.grafite-caixa { 
+  color: var(--grafite-caixa) !important;
+}
+
+.bg-azul-caixa {
+  background-color: var(--azul-caixa) !important;
+}
+
+.bg-turquesa-caixa {
+  background-color: var(--turquesa-caixa) !important;
+}
+
+.bg-roxo-caixa {
+  background-color: var(--roxo-caixa) !important;
+}
+
+.bg-verde-caixa {
+  background-color: var(--verde-caixa) !important;
+}
+
+.bg-tangerina-caixa {
+  background-color: var(--tangerina-caixa) !important;
+}
+
+.bg-goiaba-caixa {
+  background-color: var(--goiaba-caixa) !important;
+}
+
+.bg-vermelho-caixa {
+  background-color: var(--vermelho-caixa) !important;
+}
+
+.bg-ceu-caixa {
+  background-color: var(--ceu-caixa) !important;
+}
+
+.bg-cinza-escuro-caixa {
+  background-color: var(--cinza-escuro-caixa) !important;
+}
+
+.bg-cinza-caixa {
+  background-color: var(--cinza-caixa) !important;
+}
+.bg-cinza-claro-caixa {
+  background-color: var(--cinza-claro-caixa) !important;
+}
+
+.bg-laranja-caixa {
+  background-color: var(--laranja-caixa) !important;
+}
+
+.bg-sucesso-caixa {
+  background-color: var(--sucesso-caixa) !important;
+}
+
+.bg-atencao-caixa  {
+  background-color: var(--atencao-caixa) !important;
+}
+
+.bg-perigo-caixa { 
+  background-color: var(--perigo-caixa) !important;
+}
+.bg-grafite-caixa { 
+  background-color: var(--grafite-caixa) !important;
+}
+.bg-gelo-caixa { 
+  background-color: var(--gelo-caixa) !important;
+}
+.hidden {
+  display: none;
+}
+.navbar-caixa {
+background: linear-gradient(to right,var(--azul-caixa) 0%,var(--turquesa-caixa) 100%) !important
+}
+.white-text {
+  color: white !important
+}
+*, html, button, input, textarea {
+  font-family: 'futura';
+}
+.navbar-brand {
+  font-size: 24px;
+}
+.logo-caixa {
+  height: 34px;
+  width: auto;
+}
+.fill-height {
+  height: 100%;
+}
+.flex-grow-0 {
+  flex-grow: 0;
+}
+.flex-grow-1 {
+  flex-grow: 1;
+}
+.bg-transparent {
+  background-color: transparent
+}
+.avatar {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+}
+.navbar-caixa .nav-link {
+    color: white;
+    text-decoration: none
+}
+.navbar-caixa .nav-link:hover {
+    color: #ccc;
+}
+.navbar-caixa .nav-item.active:hover a {
+  color: white
+}
+.navbar-caixa .nav-item.active {
+  background-color: rgba(255, 255, 255, .2);
+}
+.navbar-caixa .nav-item.active a {
+  font-weight: bold;
+}
+.cursor-pointer {
+  cursor: pointer
+}
+.btn-outline-primary {
+  border-color: var(--azul-caixa) !important;
+  color: var(--azul-caixa) !important
+}
+
+.btn-outline-primary:hover {
+  border-color: var(--azul-caixa) !important;
+  background-color: var(--azul-caixa) !important;
+  color: white !important
+}

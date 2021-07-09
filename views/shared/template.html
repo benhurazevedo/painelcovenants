@@ -1,0 +1,109 @@
+{#===============================================================================
+    Item Name: template
+    Version: 0.1
+    Author: Rogerio Luiz Aques de Amorim
+    Adaptado para php por benhur
+    benhur.azevedo@caixa.gov.br
+================================================================================#}
+<!DOCTYPE html>
+<html lang="en">
+
+{#
+    Empregado empregado = EmpregadoService.GetLogado();
+    string numeroUnidade = empregado.CgcUnidade.ToString().PadLeft(4, '0');
+    var parms = new Dictionary<string, string>
+        {
+            { "page", "1" },
+            { "items", "10" },
+            { "base", "1"}
+        };
+#}
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="vendor/twitter/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="vendor/fortawesome/font-awesome/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/site.css" />
+    {% block head %}{% endblock %}
+</head>
+
+<body style='display: flex; flex-direction: column; height:100vh'>
+    {{ include ('shared/loading.html') }}
+    <header style='flex-grow: 0'>
+        <nav class="navbar navbar-caixa navbar-expand-md d-flex justify-content-between ">
+            <a class="navbar-brand white-text" asp-area="" asp-controller="Home" asp-action="Index">
+                <img src="assets/img/logo.png" alt="logo" class='logo-caixa mr-4'>
+                Painel <span class="futura-bold ">
+                    Covenants
+                </span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu"
+                aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            {% if empregado.Vicat %}
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="navbar-nav ml-auto">
+                        {# $ twig-> addGlobal ("CurrentUrl", $ _SERVER ["REQUEST_URI"]); #}
+                        {# set currentPath = path(app.request.attributes.get('_route'),
+                       app.request.attributes.get('_route_params')) #}
+                        <li
+                        class="nav-item active">{# colocar javascript que muda o active #}
+                            <a class="nav-link" asp-action="Index" asp-controller="Dashboard">Dashboard</a>
+                        </li>
+
+                        
+
+                        <li
+                        class='nav-item '>{# colocar javascript que muda o active #}
+                            <a class="nav-link" asp-action='Index' asp-controller="Contratos" asp-all-route-data="parms">Contratos</a>
+                        </li>
+                    </ul>
+
+                    <div class="dropdown">
+                        <button class="btn bg-transparent text-white dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="http://www.geopa.mz.caixa/api/v1/empregados/{{ empregado.Matricula }}/foto" alt="foto"
+                            class="avatar mr-1">
+                            Olá {{ empregado.primeiroNome() }}
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">{{ empregado.NomeFuncao }}</a>
+                            <a class="dropdown-item" href="#">{{ numeroUnidade }} - {{ empregado.Unidade.Nome }}</a>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </nav>
+    </header>
+    <div class="container-fluid" style='flex-grow: 1'>
+        <main role="main" class="pb-3 fill-height">
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted" style='flex-grow: 0'>
+        <div class="container-fluid navbar-caixa white-text text-center pa-2">
+            &copy; 2021 - GEOPA06
+        </div>
+    </footer>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="vendor/twitter/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/site.js" asp-append-version="true"></script>
+    <script src='assets/js/jquery.maskMoney.js'></script>
+    {%block tail%} {% endblock %}
+</body>
+<script>
+    const navlinks = document.querySelectorAll('.navbar-nav .nav-link');
+    Array.from(navlinks).forEach(link => {
+        link.addEventListener('click', () => {
+            showLoading(true);
+        })
+    })
+    $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>
+</html>

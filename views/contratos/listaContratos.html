@@ -1,0 +1,59 @@
+{% extends 'shared/template.html' %}
+{% block title %}Lista Contratos{% endblock %}
+{% block head %}
+<style>
+    .td-razao-social {
+      max-width: 30%;
+      width: 30%;
+    }
+</style>
+{% endblock %}
+{% block content %}
+<h2 class='azul-caixa futura-bold mt-2'>Contratos</h2>
+<hr>
+<div class="row mt-4">
+  <div class="col">
+    <table class="table table-striped table-sm">
+      <thead>
+        <tr>
+          <th>SN</th>
+          <th>Cód. SE</th>
+          <th>Cód. Ag.</th>
+          <th>CNPJ</th>
+          <th>Razão Social</th>
+          <th>Contrato</th>
+          <th>Situação Últ. RT</th>
+          <th>Data Últ. RT</th>
+          <th>Próx. Acomp.</th>
+          <th>Mat. Emissor Últ. RT</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr>
+            <td>SUNCO</td>
+            <td data-toggle='tooltip' data-placement='bottom' title='Brasília Sul'>0001</td>
+            <td data-toggle='tooltip' data-placement='bottom' title='Ag. Planalto'>0002</td>
+            <td>00.360.305/0001-04</td>
+            <td class='text-truncate td-razao-social'>Benhur Moveis</td>
+            <td>0647-003-00005630-4</td>
+            <td>Em Análise</td>
+            <td>08/08/2021</td>
+            <td>
+                <a class='btn bg-laranja-caixa btn-sm text-white btnDetalheContrato' 
+                    asp-controller='Contratos'
+                    asp-action='Detail' 
+                    asp-all-route-data="parms" 
+                    title='Ver detalhes do contrato' 
+                    data-toggle='tooltip'
+                    data-placement='bottom'>
+                        <i class="fas fa-search"></i>
+                </a>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+    <hr />
+  </div>
+  {% endblock %}
+  
